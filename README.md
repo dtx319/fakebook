@@ -1,0 +1,1 @@
+A social media application built with Flask and Python which allows users to GET, POST, COMMENT, and EDIT.
