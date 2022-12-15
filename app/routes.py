@@ -44,7 +44,6 @@ def user_by_id(id):
 
         return 'User not found'
 
-
 # Routes that return/display HTML
 @app.route('/')
 def home():
