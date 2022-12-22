@@ -9,4 +9,4 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     FLASK_DEBUG = os.getenv('FLASK_DEBUG')
-    
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
