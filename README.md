@@ -1,1 +1,1 @@
-A social media application built with Flask, Python, and HTML which allows users to GET, POST, COMMENT, and EDIT.
+A social media application built with Flask, Python, HTML and Bootstrap which allows users to GET, POST, COMMENT, and EDIT.
