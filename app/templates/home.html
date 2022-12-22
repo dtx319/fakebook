@@ -1,10 +1,9 @@
 {% extends './partials/layout.html' %}
 
 {% block content %}
-    <!-- JINJA -->
-    <h1>Home</h1>
-    <p>Welcome {{ user['name'] }}, I know your favorite color is {{ user['favoriteColor']}}.</p>
-{% for post in user['posts'] %}
+<h1>Home</h1>
+<p>Welcome {{ user['first_name'] }} {{ user['last_name']}}.</p>
+{% for post in posts %}
 <div class="card">
     <div class="card-header">
       {{ post['title']}}
