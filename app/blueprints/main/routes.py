@@ -1,29 +1,9 @@
 from . import bp as app
 from flask import render_template
 
-#Routes that return JSON
-user_data = {
-    'lucasl' : {
-        'user_id' : 0,
-        'name': 'Lucas',
-        'favoriteColor' : 'blue'
-    },
-    'christophert' : {
-        'user_id' : 1,
-        'name': 'Christopher',
-        'favoriteColor' : 'orange'
-    },
-    'joelt' : {
-        'user_id' : 2,
-        'name': 'Joel',
-        'favoriteColor' : 'red'
-    },
-}
 
 # Routes that return/display HTML
-logged_in_user = user_data['christophert']
-
-
+logged_in_user = 1
 
 @app.route('/')
 def home():
@@ -36,5 +16,3 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
-
