@@ -2,15 +2,14 @@ from . import bp as app
 from flask import render_template, request, redirect, url_for 
 from app.blueprints.main.models import User, Post
 from app import db
+from flask_login import current_user
 
 # Routes that return/display HTML
 @app.route('/')
 def home():
     posts = Post.query.all()
 
-    logged_in_user = User.query.get(1)
-
-    return render_template('home.html', user=logged_in_user, posts=posts)
+    return render_template('home.html', user=current_user, posts=posts)
 
 @app.route('/about')
 def about():
@@ -25,7 +24,7 @@ def create_post():
     post_title = request.form['title']
     post_body = request.form['body']
 
-    new_post = Post(title=post_title, body=post_body, user_id=1)
+    new_post = Post(title=post_title, body=post_body, user_id=current_user.id)
 
     db.session.add(new_post)
     db.session.commit()
