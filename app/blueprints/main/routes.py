@@ -3,11 +3,11 @@ from flask import render_template
 from app.blueprints.main.models import User, Post
 
 # Routes that return/display HTML
-logged_in_user = 1
-
 @app.route('/')
 def home():
     posts = Post.query.all()
+
+    logged_in_user = User.query.get(1)
 
     return render_template('home.html', user=logged_in_user, posts=posts)
 
