@@ -45,9 +45,13 @@ def user_by_id(id):
         return 'User not found'
 
 # Routes that return/display HTML
+logged_in_user = user_data['christophert']
+
+
+
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', user=logged_in_user)
 
 @app.route('/about')
 def about():

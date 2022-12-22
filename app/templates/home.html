@@ -3,4 +3,15 @@
 {% block content %}
     <!-- JINJA -->
     <h1>Home</h1>
+    <p>Welcome {{ user['name'] }}, I know your favorite color is {{ user['favoriteColor']}}.</p>
+{% for post in user['posts'] %}
+<div class="card">
+    <div class="card-header">
+      {{ post['title']}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ post['body'] }}</p>
+    </div>
+  </div>
+{% endfor %}
 {% endblock content %}
