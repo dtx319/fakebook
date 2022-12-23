@@ -56,6 +56,7 @@
         <input type="password" class="form-control" id="inputPasswordConfirm" name="inputPasswordConfirm"> -->
     </div>
     <p><small>Already have an account? <a href="{{ url_for('auth.login') }}">Login here.</a></small></p>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    {{ form.submit_button(class = "btn btn-primary btn-block") }}
 </form>
 {% endblock content %}
