@@ -1,1 +1,1 @@
-A front-end application built with Flask, Python, HTML and Bootstrap with ElephantSQL for remote data hosting to allow users to GET, POST, EDIT, and DELETE.
+Welcome to Fakebook! This front-end application is a social-networking application built with Flask, Python, HTML, and Bootstrap with ElephantSQL for remote data hosting to allow users to GET, POST, EDIT, and DELETE.
