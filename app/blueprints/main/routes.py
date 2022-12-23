@@ -35,3 +35,9 @@ def create_post():
 
     flash('Post added successfully', 'success')
     return redirect(url_for('main.home'))
+
+@app.route('/post/<id>')
+def post(id):
+    single_post = Post.query.get(id)
+
+    return render_template('single-post.html', post=single_post)
