@@ -1,5 +1,5 @@
 from . import bp as app
-from flask import render_template, request, redirect, url_for 
+from flask import render_template, request, redirect, url_for, flash
 from app.blueprints.main.models import User, Post
 from app import db
 from flask_login import current_user
@@ -29,4 +29,5 @@ def create_post():
     db.session.add(new_post)
     db.session.commit()
 
+    flash('Post added successfully', 'success')
     return redirect(url_for('main.home'))

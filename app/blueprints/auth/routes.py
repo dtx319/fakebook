@@ -22,11 +22,11 @@ def login():
     # There was a user, and the password was correct
 
     if user is None:
-        flash('There was not a user with that email.')
+        flash('There was not a user with that email.', 'danger')
     elif user.password != password:
-        flash('The password was incorrect.')
+        flash('The password was incorrect.', 'danger')
     else:
-        flash('Logged in successfully')
+        flash('Logged in successfully', 'success')
         login_user(user)
         return redirect(url_for('main.home'))
 
@@ -53,10 +53,10 @@ def register():
     check_user = User.query.filter_by(email=email).first()
 
     if check_user is not None:
-        flash('A user with this email already exists.')
+        flash('A user with this email already exists.', 'danger')
 
     elif password != confirm_password:
-        flash('The passwords do not match.')
+        flash('The passwords do not match.', 'danger')
     
     else:
         #REGISTER USER
