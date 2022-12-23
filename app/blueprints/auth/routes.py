@@ -3,6 +3,7 @@ from app.blueprints.main.models import User
 from app import db, login_manager
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user
+from forms import MyForm
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -36,6 +37,9 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if request.method == 'POST' and form.validate_on_submit():
+            first_name = form.name.data
+
     if request.method == 'GET':
         return render_template('register.html')
 
@@ -65,7 +69,9 @@ def register():
 
         db.session.add(new_user)
         db.session.commit()
+        
         flash('User registered successfully', 'success')
+        
         return redirect(url_for('auth.login'))
 
     return render_template('register.html')
